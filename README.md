@@ -1,4 +1,20 @@
 # Desafio 01 - Interface Mobile
+
+## Descritivos das Atividades
+### App Bar
+Na leitura do Mockup encontramos os seguintes itens:
+1. Uma linha que recebe todos os itens;
+
+2. Dentro da linha encontramos 3 itens:
+    - Icone;
+    - Coluna com 2 textos;
+    - Avatar;
+
+3. Para personalizarmos precisamos entender primeiro qual é o tipo de Widget que podemos utilizar. Para personalizarmos a App Bar necessitamos implemnetar o widget chamado "PreferredSizeWidget". Nele encontramos o tamanho que deverá ser implementado seguido da extensão de um widget sem comportamento, ou seja, um stateless widget. 
+
+4. Durante personalização necessitamos também de mais duas informações, a saber:
+    - A família da fonte que vamos utilizar na personalização;
+    - Uma imagem para o avatar; //lembrar de criar a pasta assets;
 ## Criação de Telas
 
 - Reproduzir Telas de Mockup

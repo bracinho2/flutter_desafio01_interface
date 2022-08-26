@@ -13,7 +13,15 @@ class HomePage extends StatelessWidget {
         loginbutton: false,
       ),
       body: Container(
-        color: Colors.amber,
+        color: Colors.transparent,
+        child: Container(
+          decoration: const BoxDecoration(
+              color: Colors.grey,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(50),
+                topRight: Radius.circular(50),
+              )),
+        ),
       ),
     );
   }

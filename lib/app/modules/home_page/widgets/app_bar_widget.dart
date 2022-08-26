@@ -35,7 +35,14 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
               Text(subTitle, style: AppTextStyles.appBarSubtitle),
             ],
           ),
-          const CircleAvatar()
+          const CircleAvatar(
+            child: Text(
+              'Img Here',
+              style: TextStyle(
+                fontSize: 8,
+              ),
+            ),
+          )
         ],
       ),
     );
