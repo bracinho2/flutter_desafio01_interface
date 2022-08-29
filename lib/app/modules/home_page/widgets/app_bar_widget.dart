@@ -5,12 +5,11 @@ import '../../../core/styles/app_text_styles.dart';
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final String subTitle;
-  final bool loginbutton;
+
   const AppBarWidget({
     Key? key,
     required this.title,
     required this.subTitle,
-    required this.loginbutton,
   }) : super(key: key);
 
   @override
@@ -35,19 +34,18 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
               Text(subTitle, style: AppTextStyles.appBarSubtitle),
             ],
           ),
-          const CircleAvatar(
-            child: Text(
-              'Img Here',
-              style: TextStyle(
-                fontSize: 8,
-              ),
+          CircleAvatar(
+            radius: 25.0,
+            child: ClipRRect(
+              child: Image.asset('assets/images/gaita.png'),
+              borderRadius: BorderRadius.circular(50.0),
             ),
-          )
+          ),
         ],
       ),
     );
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(90);
+  Size get preferredSize => const Size.fromHeight(100);
 }
