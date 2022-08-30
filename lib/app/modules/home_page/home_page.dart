@@ -15,21 +15,18 @@ class HomePage extends StatelessWidget {
         subTitle: 'Paraná, Sulina PR',
       ),
       body: Container(
-        color: Colors.transparent,
-        child: Container(
-          decoration: const BoxDecoration(
-            color: AppColors.cinzaFraco,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(25),
-              topRight: Radius.circular(25),
-            ),
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
           ),
-          child: const CustomScrollView(
-            slivers: <Widget>[
-              CustomSliverHorizontalBar(),
-              CustomSliverVerticalBar(),
-            ],
-          ),
+          color: AppColors.cinzaFraco,
+        ),
+        child: const CustomScrollView(
+          slivers: <Widget>[
+            CustomSliverHorizontalBar(),
+            CustomSliverVerticalBar(),
+          ],
         ),
       ),
     );

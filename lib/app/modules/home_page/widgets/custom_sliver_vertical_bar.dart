@@ -1,51 +1,98 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_desafio01_interface/app/modules/detail_page/detail_page.dart';
 
 class CustomSliverVerticalBar extends StatelessWidget {
   const CustomSliverVerticalBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return SliverList(
       delegate: SliverChildBuilderDelegate(
-        (context, index) => Card(
-          color: Colors.white,
-          child: ListTile(
-              leading: Container(
-                height: 120.0,
-                width: 120.0,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/gaita.png'),
-                    //fit: BoxFit.fill,
-                  ),
-                  shape: BoxShape.rectangle,
+        (context, index) => InkWell(
+          onTap: () {
+            print('Clicked =) $index');
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const DetailPage()));
+          },
+          child: Padding(
+            padding:
+                const EdgeInsets.only(top: 10, bottom: 10, left: 25, right: 25),
+            child: Container(
+              height: 150,
+              width: size.width,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20),
                 ),
               ),
-              title: const Text(
-                'Title',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontFamily: 'Roboto',
-                  color: Colors.black,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text('Raça'),
-                  const Text('Idade'),
                   Row(
-                    children: const [
-                      Icon(
-                        Icons.location_city,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.asset('assets/images/gaita.png'),
+                        ),
                       ),
-                      Text('2.5 KM away')
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Spark',
+                            style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                          const Text('Raça do Cusco'),
+                          const Text('Edad do'),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: const [
+                              Icon(
+                                Icons.pin_drop,
+                                color: Colors.red,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Sulina - PR',
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ],
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.all(12.0),
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: Icon(
+                        Icons.heart_broken,
+                        color: Colors.red,
+                      ),
+                    ),
                   ),
                 ],
               ),
-              trailing: const Icon(Icons.heart_broken, color: Colors.red)),
+            ),
+          ),
         ),
         childCount: 9,
       ),

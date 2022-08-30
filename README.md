@@ -1,7 +1,7 @@
 # Desafio 01 - Interface Mobile
 
 ## Descritivos das Atividades
-### App Bar
+### AppBar
 Na leitura do Mockup encontramos os seguintes itens:
 1. Uma linha que recebe todos os itens;
 
@@ -15,6 +15,22 @@ Na leitura do Mockup encontramos os seguintes itens:
 4. Durante personalização necessitamos também de mais duas informações, a saber:
     - A família da fonte que vamos utilizar na personalização;
     - Uma imagem para o avatar; //lembrar de criar a pasta assets;
+
+### Slivers
+A sugestão é utilizarmos o Widget Slivers que proporciona o uso de sliders aninhados com funções e direções diferentes. 
+Na leitura do Mockup encontramos os seguintes itens:
+    - Sliver horizontal;
+    - Sliver vertical;
+
+2. Sliver vertical:
+
+Cada um dos itens da lista pode ser construídos com os seguintes Widgets:
+    - Container com todos os itens;
+    - Row com todos os itens;
+    - Para separar e garantir a posição da Imagem + Descrições estes itens são envolvidos em uma nova Row; Lembre-se que na linha da localização temos uma nova Row com um icone + cidade;
+    - Para exibir a imagem usaremos um widget chamado ClipRep;
+    - Para alinhar o Coração utilizaremos o Widget Align que possui várias posições disponíveis;
+
 ## Criação de Telas
 
 - Reproduzir Telas de Mockup
