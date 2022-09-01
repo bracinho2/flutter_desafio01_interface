@@ -27,12 +27,15 @@ class DogPhotos extends StatelessWidget {
           width: 300,
           child: Stack(
             children: [
-              Container(
-                decoration: BoxDecoration(
-                    color: Colors.yellow,
-                    borderRadius: BorderRadius.circular(150)),
-                height: size.height * .3,
-                width: size.width * .55,
+              Positioned(
+                left: 150,
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadius.circular(150)),
+                  height: size.height * 0.29,
+                  width: size.width * 0.29,
+                ),
               ),
               Image.asset(
                 'assets/images/dog.png',

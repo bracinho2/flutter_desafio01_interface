@@ -5,7 +5,9 @@ class DogAbout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Container(
+      width: size.width,
       color: Colors.white,
       child: Padding(
         padding: const EdgeInsets.all(20),

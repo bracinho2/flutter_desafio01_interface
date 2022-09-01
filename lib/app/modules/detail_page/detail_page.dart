@@ -24,7 +24,7 @@ class DetailPage extends StatelessWidget {
                 ),
               ),
               const Expanded(
-                flex: 3,
+                flex: 2,
                 child: DogPhotos(),
               ),
               const Expanded(
