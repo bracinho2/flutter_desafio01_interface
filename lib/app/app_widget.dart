@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_desafio01_interface/app/modules/detail_page/detail_page.dart';
 import 'package:flutter_desafio01_interface/app/modules/home_page/home_page.dart';
 
 class AppWidget extends StatelessWidget {
@@ -7,10 +6,9 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(scaffoldBackgroundColor: Colors.transparent),
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const DetailPage(),
+      home: HomePage(),
     );
   }
 }

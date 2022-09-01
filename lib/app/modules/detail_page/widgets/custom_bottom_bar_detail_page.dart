@@ -12,11 +12,11 @@ class CustomBottomBarDetailPage extends StatelessWidget {
           decoration: const BoxDecoration(
             color: Colors.red,
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(70.0),
+              topLeft: Radius.circular(30.0),
             ),
           ),
-          height: 100,
-          width: 300,
+          height: 60,
+          width: 200,
           child: Center(
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

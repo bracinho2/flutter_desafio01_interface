@@ -19,7 +19,7 @@ class CustomSliverVerticalBar extends StatelessWidget {
             padding:
                 const EdgeInsets.only(top: 10, bottom: 10, left: 25, right: 25),
             child: Container(
-              height: 150,
+              height: 120,
               width: size.width,
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -49,12 +49,17 @@ class CustomSliverVerticalBar extends StatelessWidget {
                           const Text(
                             'Spark',
                             style: TextStyle(
-                              fontSize: 30,
+                              fontSize: 20,
                               fontWeight: FontWeight.w900,
                             ),
                           ),
-                          const Text('Raça do Cusco'),
-                          const Text('Edad do'),
+                          const Text(
+                            'Raça do Cusco',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const Text('Edad do cusco'),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,

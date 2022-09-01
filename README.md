@@ -1,5 +1,6 @@
 # Desafio 01 - Interface Mobile
 
+## Tela 01
 ## Descritivos das Atividades
 ### AppBar
 Na leitura do Mockup encontramos os seguintes itens:
@@ -30,6 +31,35 @@ Cada um dos itens da lista pode ser construídos com os seguintes Widgets:
     - Para separar e garantir a posição da Imagem + Descrições estes itens são envolvidos em uma nova Row; Lembre-se que na linha da localização temos uma nova Row com um icone + cidade;
     - Para exibir a imagem usaremos um widget chamado ClipRep;
     - Para alinhar o Coração utilizaremos o Widget Align que possui várias posições disponíveis;
+
+## Tela 02
+### AppBar
+Na leitura do Mockup encontramos os seguintes itens:
+    - Container;
+    - Linha;
+    - Dois widgets:
+        - Icone com função de retorno;
+        - Icone com função de Preferido;
+
+### Descrição do Cachorro
+Na leitura encontramos os seguintes itens:
+    - Container;
+    - Linha com espaçamento entre itens;
+    - Coluna esquerda (Nome, raça, localização (é uma linha com ícone + cidade));
+    - Coluna direita com ícone e idade;
+
+
+### Fotos do Animal
+Na leitura encontramos os seguintes itens:
+    - Linha;
+    - Lista de fotos (list view);
+    - sobreposição entre figura e foto;
+
+### Descrição do Animal
+Na leitura encontramos os seguintes itens:
+    - Container;
+    - Texto 'sobre';
+    - Texto 'Descrição';
 
 ## Criação de Telas
 

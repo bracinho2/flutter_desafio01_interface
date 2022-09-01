@@ -17,10 +17,13 @@ class CustomDetailPageAppBarWidget extends StatelessWidget
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Icon(
-            Icons.arrow_back_ios_new,
-            size: 30,
-            color: Colors.grey,
+          InkWell(
+            onTap: () => Navigator.pop(context),
+            child: const Icon(
+              Icons.arrow_back_ios_new,
+              size: 30,
+              color: Colors.grey,
+            ),
           ),
           Container(
             height: 50,

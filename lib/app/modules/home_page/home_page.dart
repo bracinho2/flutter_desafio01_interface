@@ -9,24 +9,26 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const AppBarWidget(
-        title: 'Localização',
-        subTitle: 'Paraná, Sulina PR',
-      ),
-      body: Container(
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
-          color: AppColors.cinzaFraco,
+    return SafeArea(
+      child: Scaffold(
+        appBar: const AppBarWidget(
+          title: 'Localização',
+          subTitle: 'Paraná, Sulina PR',
         ),
-        child: const CustomScrollView(
-          slivers: <Widget>[
-            CustomSliverHorizontalBar(),
-            CustomSliverVerticalBar(),
-          ],
+        body: Container(
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            ),
+            color: AppColors.cinzaFraco,
+          ),
+          child: const CustomScrollView(
+            slivers: <Widget>[
+              CustomSliverHorizontalBar(),
+              CustomSliverVerticalBar(),
+            ],
+          ),
         ),
       ),
     );
