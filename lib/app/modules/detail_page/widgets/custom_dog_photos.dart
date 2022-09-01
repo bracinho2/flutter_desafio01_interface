@@ -5,13 +5,13 @@ class DogPhotos extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         SizedBox(
           width: 80,
           child: ListView.builder(
-            physics: const BouncingScrollPhysics(),
             itemCount: 10,
             itemBuilder: ((context, index) => Padding(
                   padding: const EdgeInsets.only(left: 20, bottom: 10),
@@ -27,23 +27,17 @@ class DogPhotos extends StatelessWidget {
           width: 300,
           child: Stack(
             children: [
-              Positioned(
-                top: 13,
-                left: 150,
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.yellow,
-                      borderRadius: BorderRadius.circular(150)),
-                  height: 250,
-                  width: 250,
-                ),
+              Container(
+                decoration: BoxDecoration(
+                    color: Colors.yellow,
+                    borderRadius: BorderRadius.circular(150)),
+                height: size.height * .3,
+                width: size.width * .55,
               ),
-              Align(
-                child: Image.asset(
-                  'assets/images/dog.png',
-                  alignment: Alignment.centerRight,
-                  width: 150,
-                ),
+              Image.asset(
+                'assets/images/dog.png',
+                alignment: Alignment.centerRight,
+                width: 150,
               ),
             ],
           ),

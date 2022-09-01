@@ -19,15 +19,21 @@ class DogDetailDescription extends StatelessWidget {
                 'Sparky',
                 style: TextStyle(
                   fontSize: 30,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w900,
                 ),
               ),
-              const Text('Raça do Cusco'),
+              const Text(
+                'Raça do Cusco',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
                   Icon(
-                    Icons.pin_drop,
+                    Icons.place,
                     color: Colors.red,
                   ),
                   SizedBox(

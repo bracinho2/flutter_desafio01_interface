@@ -20,9 +20,9 @@ class CustomDetailPageAppBarWidget extends StatelessWidget
           InkWell(
             onTap: () => Navigator.pop(context),
             child: const Icon(
-              Icons.arrow_back_ios_new,
-              size: 30,
-              color: Colors.grey,
+              Icons.keyboard_arrow_left,
+              size: 50,
+              color: Colors.black54,
             ),
           ),
           Container(
