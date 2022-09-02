@@ -25,8 +25,8 @@ class DogDetailDescription extends StatelessWidget {
               const Text(
                 'Raça do Cusco',
                 style: TextStyle(
-                  color: Colors.black87,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               Row(
@@ -56,8 +56,18 @@ class DogDetailDescription extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: const [
-                Icon(Icons.search),
-                Text('Idade do Cachorro'),
+                Icon(
+                  Icons.male,
+                  color: Colors.black26,
+                  size: 30,
+                ),
+                Text(
+                  'Idade do Cachorro',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ],
             ),
           )

@@ -59,13 +59,13 @@ class CustomSliverVerticalBar extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const Text('Edad do cusco'),
+                          const Text('Idade do cusco'),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: const [
                               Icon(
-                                Icons.pin_drop,
+                                Icons.place,
                                 color: Colors.red,
                               ),
                               SizedBox(

@@ -9,38 +9,52 @@ class DogPhotos extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        SizedBox(
-          width: 80,
-          child: ListView.builder(
-            itemCount: 10,
-            itemBuilder: ((context, index) => Padding(
-                  padding: const EdgeInsets.only(left: 20, bottom: 10),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: Image.asset('assets/images/gaita.png'),
-                  ),
-                )),
+        Container(
+          color: Colors.white,
+          width: 100,
+          child: ShaderMask(
+            shaderCallback: (Rect rect) {
+              return const LinearGradient(
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+                colors: [
+                  Colors.white,
+                  Colors.transparent,
+                  Colors.transparent,
+                  Colors.white
+                ],
+                stops: [0.0, 0.0, 0.0, 0.1],
+              ).createShader(rect);
+            },
+            child: ListView.builder(
+              itemCount: 10,
+              itemBuilder: ((context, index) => Padding(
+                    padding: const EdgeInsets.only(left: 20, bottom: 10),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15),
+                      child: Image.asset('assets/images/gaita.png'),
+                    ),
+                  )),
+            ),
           ),
         ),
-        Container(
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(100)),
-          width: 300,
-          child: Stack(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                    color: Colors.yellow,
-                    borderRadius: BorderRadius.circular(150)),
-                height: size.height * .3,
-                width: size.width * .55,
-              ),
-              Image.asset(
-                'assets/images/dog.png',
-                alignment: Alignment.centerRight,
-                width: 150,
-              ),
-            ],
-          ),
+        Stack(
+          clipBehavior: Clip.hardEdge,
+          alignment: Alignment.center,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.yellow,
+                  borderRadius: BorderRadius.circular(500)),
+              height: 275,
+              width: 275,
+            ),
+            Image.asset(
+              'assets/images/dog.png',
+              alignment: Alignment.centerRight,
+              width: 200,
+            ),
+          ],
         ),
       ],
     );
