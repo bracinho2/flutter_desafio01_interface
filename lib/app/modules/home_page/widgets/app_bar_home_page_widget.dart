@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../../core/styles/app_text_styles.dart';
 
-class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
+class AppBarHomePageWidget extends StatelessWidget
+    implements PreferredSizeWidget {
   final String title;
   final String subTitle;
 
-  const AppBarWidget({
+  const AppBarHomePageWidget({
     Key? key,
     required this.title,
     required this.subTitle,
@@ -47,5 +48,5 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(100);
+  Size get preferredSize => const Size.fromHeight(105);
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_desafio01_interface/app/core/resposivity.dart';
 import 'package:flutter_desafio01_interface/app/modules/detail_page/detail_page.dart';
 
 class CustomSliverVerticalBar extends StatelessWidget {
@@ -20,7 +21,7 @@ class CustomSliverVerticalBar extends StatelessWidget {
                 const EdgeInsets.only(top: 10, bottom: 10, left: 25, right: 25),
             child: Container(
               height: 120,
-              width: size.width,
+              width: AppResponsivity.calculaLargura(375.0),
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.all(

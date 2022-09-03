@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_desafio01_interface/app/modules/detail_page/detail_page.dart';
 import 'package:flutter_desafio01_interface/app/modules/home_page/home_page.dart';
 
 class AppWidget extends StatelessWidget {
@@ -9,7 +8,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DetailPage(),
+      home: HomePage(),
     );
   }
 }
