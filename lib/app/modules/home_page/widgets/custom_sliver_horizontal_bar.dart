@@ -1,109 +1,119 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_desafio01_interface/app/core/app_resposivity.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomSliverHorizontalBar extends StatelessWidget {
   const CustomSliverHorizontalBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final mediaQueryData = MediaQuery.of(context);
     return SliverToBoxAdapter(
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 5,
-              bottom: 5,
-            ),
-            child: SizedBox(
-              height: 100,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: listaMenus.length,
-                itemBuilder: ((context, index) => Padding(
-                    padding: const EdgeInsets.only(right: 16),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                              padding: const EdgeInsets.all(12.0),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(17.0),
-                                color: Colors.amber,
-                              ),
-                              child: Row(children: [
-                                listaMenus[index].icon,
-                                if (listaMenus[index].name.isNotEmpty)
-                                  Padding(
-                                      padding: const EdgeInsets.only(left: 12),
-                                      child: Text(listaMenus[index].name,
-                                          style: const TextStyle(
-                                              color: Colors.white)))
-                              ]))
-                        ]))),
-              ),
-            ),
+      child: SizedBox(
+        height: Resposivity.automatic(95, mediaQueryData),
+        child: Padding(
+          padding:
+              EdgeInsets.only(left: Resposivity.automatic(10, mediaQueryData)),
+          child: ListView.builder(
+            clipBehavior: Clip.none,
+            scrollDirection: Axis.horizontal,
+            itemCount: listaMenus.length,
+            itemBuilder: ((context, index) => Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: Resposivity.automatic(16, mediaQueryData)),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                          padding: EdgeInsets.all(
+                              Resposivity.automatic(12, mediaQueryData)),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(
+                                Resposivity.automatic(17, mediaQueryData)),
+                            color: listaMenus[index].clicked
+                                ? Colors.red
+                                : Colors.white,
+                          ),
+                          child: Row(children: [
+                            FaIcon(
+                              listaMenus[index].icon.icon,
+                              color: listaMenus[index].clicked
+                                  ? Colors.white
+                                  : Colors.black26,
+                            ),
+                            if (listaMenus[index].name.isNotEmpty)
+                              Padding(
+                                  padding: EdgeInsets.only(
+                                      left: Resposivity.automatic(
+                                          12, mediaQueryData)),
+                                  child: Text(listaMenus[index].name,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: listaMenus[index].clicked
+                                            ? Colors.white
+                                            : Colors.black87,
+                                      )))
+                          ]))
+                    ]))),
           ),
-        ],
+        ),
       ),
     );
   }
 }
 
 class MenuItem {
-  final Icon icon;
+  final FaIcon icon;
   final String name;
+  final bool clicked;
 
   MenuItem({
     required this.icon,
     this.name = '',
+    this.clicked = false,
   });
 }
 
 List<MenuItem> listaMenus = [
   MenuItem(
-    icon: const Icon(
-      Icons.menu,
-      color: Colors.white,
+    icon: const FaIcon(
+      FontAwesomeIcons.bars,
     ),
   ),
   MenuItem(
-    icon: const Icon(
-      Icons.menu,
-      color: Colors.white,
+    icon: const FaIcon(
+      FontAwesomeIcons.dog,
     ),
-    name: 'Cats',
+    name: 'Dogs',
+    clicked: true,
   ),
   MenuItem(
-    icon: const Icon(
-      Icons.menu,
-      color: Colors.white,
+    icon: const FaIcon(
+      FontAwesomeIcons.cat,
     ),
     name: 'Birds',
   ),
   MenuItem(
-    icon: const Icon(
-      Icons.menu,
-      color: Colors.white,
+    icon: const FaIcon(
+      FontAwesomeIcons.cat,
     ),
     name: 'Jacares',
   ),
   MenuItem(
-    icon: const Icon(
-      Icons.menu,
-      color: Colors.white,
+    icon: const FaIcon(
+      FontAwesomeIcons.cat,
     ),
     name: 'Jacares',
   ),
   MenuItem(
-    icon: const Icon(
-      Icons.menu,
-      color: Colors.white,
+    icon: const FaIcon(
+      FontAwesomeIcons.cat,
     ),
     name: 'Jacares',
   ),
   MenuItem(
-    icon: const Icon(
-      Icons.menu,
-      color: Colors.white,
+    icon: const FaIcon(
+      FontAwesomeIcons.cat,
     ),
     name: 'Jacares',
   ),

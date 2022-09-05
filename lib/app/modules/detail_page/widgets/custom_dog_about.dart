@@ -1,32 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_desafio01_interface/app/core/app_resposivity.dart';
 
 class DogAbout extends StatelessWidget {
   const DogAbout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final mediaQueryData = MediaQuery.of(context);
     return Container(
-      width: size.width,
+      width: mediaQueryData.size.width,
       color: Colors.white,
       child: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsets.all(Resposivity.automatic(20, mediaQueryData)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Text(
               'Sobre',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: Resposivity.automatic(20, mediaQueryData),
               ),
             ),
             Text(
-              'when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronicd.It has survived not only five centuries, but also the leap into electronicd.It has survived not only five centuries, but also the leap into electronicd.',
+              'when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronicd.It has survived not only five centuries.',
               style: TextStyle(
-                fontSize: 15,
-                height: 2,
+                fontSize: Resposivity.automaticFont(mediaQueryData),
+                height: Resposivity.automatic(2, mediaQueryData),
                 color: Colors.grey,
+                overflow: TextOverflow.clip,
               ),
             ),
           ],

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../core/styles/app_text_styles.dart';
+import 'package:flutter_desafio01_interface/app/core/app_resposivity.dart';
 
 class AppBarHomePageWidget extends StatelessWidget
     implements PreferredSizeWidget {
@@ -15,6 +14,7 @@ class AppBarHomePageWidget extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
+    final mediaQueryData = MediaQuery.of(context);
     return Container(
       padding: const EdgeInsets.only(right: 20, left: 20),
       decoration: const BoxDecoration(
@@ -23,20 +23,35 @@ class AppBarHomePageWidget extends StatelessWidget
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Icon(
-            Icons.menu,
-            size: 40,
-            color: Colors.grey,
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Icon(
+              Icons.menu,
+              size: Resposivity.automatic(45, mediaQueryData),
+              color: Colors.grey,
+            ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(title, style: AppTextStyles.appBarTitle),
-              Text(subTitle, style: AppTextStyles.appBarSubtitle),
+              Text(title,
+                  style: TextStyle(
+                    fontSize: Resposivity.automatic(14, mediaQueryData),
+                    fontFamily: 'Inter',
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w500,
+                  )),
+              Text(subTitle,
+                  style: TextStyle(
+                    fontSize: Resposivity.automatic(20, mediaQueryData),
+                    fontFamily: 'Inter',
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  )),
             ],
           ),
           CircleAvatar(
-            radius: 25.0,
+            radius: Resposivity.automatic(35, mediaQueryData),
             child: ClipRRect(
               child: Image.asset('assets/images/gaita.png'),
               borderRadius: BorderRadius.circular(50.0),

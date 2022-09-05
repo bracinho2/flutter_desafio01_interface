@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_desafio01_interface/app/core/resposivity.dart';
+import 'package:flutter_desafio01_interface/app/core/app_resposivity.dart';
 import 'package:flutter_desafio01_interface/app/modules/detail_page/detail_page.dart';
 
 class CustomSliverVerticalBar extends StatelessWidget {
@@ -7,25 +7,27 @@ class CustomSliverVerticalBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final mediaQueryData = MediaQuery.of(context);
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (context, index) => InkWell(
           onTap: () {
-            print('Clicked =) $index');
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const DetailPage()));
           },
           child: Padding(
-            padding:
-                const EdgeInsets.only(top: 10, bottom: 10, left: 25, right: 25),
+            padding: EdgeInsets.only(
+              left: Resposivity.automatic(25, mediaQueryData),
+              right: Resposivity.automatic(25, mediaQueryData),
+              bottom: Resposivity.automatic(20, mediaQueryData),
+            ),
             child: Container(
-              height: 120,
-              width: AppResponsivity.calculaLargura(375.0),
-              decoration: const BoxDecoration(
+              height: Resposivity.automatic(120, mediaQueryData),
+              width: Resposivity.automatic(315, mediaQueryData),
+              decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.all(
-                  Radius.circular(20),
+                  Radius.circular(Resposivity.automatic(20, mediaQueryData)),
                 ),
               ),
               child: Row(
@@ -34,23 +36,26 @@ class CustomSliverVerticalBar extends StatelessWidget {
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(
+                            Resposivity.automatic(8.0, mediaQueryData)),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(
+                              Resposivity.automatic(20, mediaQueryData)),
                           child: Image.asset('assets/images/gaita.png'),
                         ),
                       ),
-                      const SizedBox(
-                        width: 10,
+                      SizedBox(
+                        width: Resposivity.automatic(10, mediaQueryData),
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             'Spark',
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize:
+                                  Resposivity.automatic(20, mediaQueryData),
                               fontWeight: FontWeight.w900,
                             ),
                           ),
@@ -64,17 +69,21 @@ class CustomSliverVerticalBar extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
+                            children: [
                               Icon(
                                 Icons.place,
                                 color: Colors.red,
+                                size: Resposivity.automatic(20, mediaQueryData),
                               ),
                               SizedBox(
-                                width: 10,
+                                width:
+                                    Resposivity.automatic(12, mediaQueryData),
                               ),
                               Text(
                                 'Sulina - PR',
                                 style: TextStyle(
+                                  fontSize:
+                                      Resposivity.automatic(12, mediaQueryData),
                                   color: Colors.grey,
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -85,9 +94,10 @@ class CustomSliverVerticalBar extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: Align(
+                  Padding(
+                    padding: EdgeInsets.all(
+                        Resposivity.automatic(12, mediaQueryData)),
+                    child: const Align(
                       alignment: Alignment.topRight,
                       child: Icon(
                         Icons.heart_broken,

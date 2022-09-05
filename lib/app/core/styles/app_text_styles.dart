@@ -8,7 +8,7 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
   );
   static TextStyle appBarSubtitle = const TextStyle(
-    fontSize: 20,
+    fontSize: 14,
     fontFamily: 'Inter',
     color: Colors.black,
     fontWeight: FontWeight.w900,

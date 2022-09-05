@@ -1,47 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_desafio01_interface/app/core/app_resposivity.dart';
 
 class DogDetailDescription extends StatelessWidget {
   const DogDetailDescription({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final mediaQueryData = MediaQuery.of(context);
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: EdgeInsets.symmetric(
+          horizontal: Resposivity.automatic(20, mediaQueryData)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 'Sparky',
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: Resposivity.automatic(30, mediaQueryData),
                   fontWeight: FontWeight.w900,
                 ),
               ),
-              const Text(
+              Text(
                 'Raça do Cusco',
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: Resposivity.automatic(14, mediaQueryData),
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Icon(
                     Icons.place,
+                    size: Resposivity.automatic(20, mediaQueryData),
                     color: Colors.red,
                   ),
                   SizedBox(
-                    width: 10,
+                    width: Resposivity.automatic(10, mediaQueryData),
                   ),
                   Text(
                     'Sulina - PR',
                     style: TextStyle(
+                      fontSize: Resposivity.automatic(12, mediaQueryData),
                       color: Colors.grey,
                       fontWeight: FontWeight.w500,
                     ),
@@ -51,20 +55,20 @@ class DogDetailDescription extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(Resposivity.automatic(10, mediaQueryData)),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.end,
-              children: const [
+              children: [
                 Icon(
                   Icons.male,
                   color: Colors.black26,
-                  size: 30,
+                  size: Resposivity.automatic(30, mediaQueryData),
                 ),
                 Text(
                   'Idade do Cachorro',
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: Resposivity.automatic(14, mediaQueryData),
                     fontWeight: FontWeight.bold,
                   ),
                 ),

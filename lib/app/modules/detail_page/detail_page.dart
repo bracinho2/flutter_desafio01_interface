@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_desafio01_interface/app/core/styles/app_colors.dart';
 import 'package:flutter_desafio01_interface/app/modules/detail_page/widgets/custom_app_bar_detail_page_widget.dart';
 import 'package:flutter_desafio01_interface/app/modules/detail_page/widgets/custom_bottom_bar_detail_page.dart';
 import 'package:flutter_desafio01_interface/app/modules/detail_page/widgets/custom_dog_about.dart';
@@ -15,6 +14,7 @@ class DetailPage extends StatelessWidget {
       child: Scaffold(
           appBar: const CustomDetailPageAppBarWidget(),
           body: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Expanded(
                 flex: 1,
@@ -23,9 +23,12 @@ class DetailPage extends StatelessWidget {
                   child: const DogDetailDescription(),
                 ),
               ),
-              const Expanded(
+              Expanded(
                 flex: 3,
-                child: DogPhotos(),
+                child: Container(
+                  color: Colors.white,
+                  child: const DogPhotos(),
+                ),
               ),
               const Expanded(
                 flex: 2,
