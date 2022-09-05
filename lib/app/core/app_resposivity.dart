@@ -28,8 +28,10 @@ class Resposivity {
         : _calcWidth(tamanho, data);
   }
 
-  static double automaticFont(MediaQueryData data) {
+  static double automaticFont({double? size, required MediaQueryData data}) {
     final width = data.size.width;
+
+    var coeficiente = (data.size.width * 0.390625) / 100;
 
     if (width > 320 && width < 767) return 16;
     if (width > 768 && width < 1023) return 18;
@@ -40,6 +42,7 @@ class Resposivity {
   }
 }
 
+//https://matthewjamestaylor.com/responsive-font-size
 // de 320px a 767px  =  font-size: 16px;
 // de 768px a 1023px = font-size: 18px;
 // de 1024px a 1279px = font-size: 19px;

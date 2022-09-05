@@ -12,20 +12,18 @@ class HomePage extends StatelessWidget {
     final mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
-        appBar: const AppBarHomePageWidget(
-          title: 'Localização',
-          subTitle: 'Paraná, Sulina PR',
-        ),
+        // appBar:  const AppBarHomePageWidget(
+        //   title: 'Localização',
+        //   subTitle: 'Paraná, Sulina PR',
+        // ),
         body: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
               backgroundColor: Colors.white,
-              expandedHeight: Resposivity.automatic(200, mediaQueryData),
-              flexibleSpace: FlexibleSpaceBar(
-                background: Image.asset(
-                  'assets/images/gaita.png',
-                  fit: BoxFit.cover,
-                ),
+              expandedHeight: Resposivity.automatic(105, mediaQueryData),
+              flexibleSpace: const AppBarHomePageWidget(
+                title: 'Location',
+                subTitle: 'Sulina - Paraná',
               ),
             ),
             const CustomSliverHorizontalBar(),

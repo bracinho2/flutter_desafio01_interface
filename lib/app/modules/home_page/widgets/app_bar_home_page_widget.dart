@@ -36,7 +36,10 @@ class AppBarHomePageWidget extends StatelessWidget
             children: [
               Text(title,
                   style: TextStyle(
-                    fontSize: Resposivity.automatic(14, mediaQueryData),
+                    fontSize: mediaQueryData.size.width > 320 &&
+                            mediaQueryData.size.width < 767
+                        ? 16
+                        : 16,
                     fontFamily: 'Inter',
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
