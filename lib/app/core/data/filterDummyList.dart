@@ -20,39 +20,39 @@ List<FilterMenuItem> filterMenuItemList = [
   ),
   FilterMenuItem(
     icon: const FaIcon(
-      FontAwesomeIcons.dog,
+      FontAwesomeIcons.music,
     ),
-    name: 'Dogs',
+    name: 'Gauchesca',
     clicked: true,
   ),
   FilterMenuItem(
     icon: const FaIcon(
-      FontAwesomeIcons.cat,
+      FontAwesomeIcons.music,
     ),
-    name: 'Birds',
+    name: 'Nordestina',
   ),
   FilterMenuItem(
     icon: const FaIcon(
-      FontAwesomeIcons.cat,
+      FontAwesomeIcons.music,
     ),
-    name: 'Jacares',
+    name: 'Amazonense',
     clicked: true,
   ),
   FilterMenuItem(
     icon: const FaIcon(
-      FontAwesomeIcons.cat,
+      FontAwesomeIcons.music,
     ),
-    name: 'Jacares',
+    name: 'Forro',
   ),
   FilterMenuItem(
     icon: const FaIcon(
-      FontAwesomeIcons.cat,
+      FontAwesomeIcons.music,
     ),
-    name: 'Jacares',
+    name: 'Paraguay',
   ),
   FilterMenuItem(
     icon: const FaIcon(
-      FontAwesomeIcons.cat,
+      FontAwesomeIcons.music,
     ),
     name: 'Jacares',
   ),
