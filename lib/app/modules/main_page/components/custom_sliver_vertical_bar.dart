@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_desafio01_interface/app/core/app_resposivity.dart';
 import 'package:flutter_desafio01_interface/app/core/data/acordeonistDummyList.dart';
 import 'package:flutter_desafio01_interface/app/modules/detail_page/detail_page.dart';
+import 'package:flutter_desafio01_interface/app/modules/main_page/components/custom_horizontal_menu_image.dart';
+import 'package:flutter_desafio01_interface/app/modules/main_page/components/custom_horizontal_menu_item_description.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomSliverVerticalBar extends StatelessWidget {
   const CustomSliverVerticalBar({Key? key}) : super(key: key);
@@ -39,72 +42,29 @@ class CustomSliverVerticalBar extends StatelessWidget {
                     Row(
                       children: [
                         Padding(
-                          padding: EdgeInsets.all(
-                              Resposivity.automatic(8.0, mediaQueryData)),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(
-                                Resposivity.automatic(20, mediaQueryData)),
-                            child: Image.asset('assets/images/gaita.png'),
-                          ),
-                        ),
+                            padding: EdgeInsets.all(
+                                Resposivity.automatic(8.0, mediaQueryData)),
+                            child: const CustomVerticalMenuImage()),
                         SizedBox(
                           width: Resposivity.automatic(10, mediaQueryData),
                         ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              acordeonistMenuList[index].nome,
-                              style: TextStyle(
-                                fontSize:
-                                    Resposivity.automatic(20, mediaQueryData),
-                                fontWeight: FontWeight.w900,
-                              ),
-                            ),
-                            const Text(
-                              'Raça do Cusco',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const Text('Idade do cusco'),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.place,
-                                  color: Colors.red,
-                                  size:
-                                      Resposivity.automatic(20, mediaQueryData),
-                                ),
-                                SizedBox(
-                                  width:
-                                      Resposivity.automatic(12, mediaQueryData),
-                                ),
-                                Text(
-                                  'Sulina - PR',
-                                  style: TextStyle(
-                                    fontSize: Resposivity.automatic(
-                                        12, mediaQueryData),
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
+                        CustomVerticalMenuItemDescription(
+                          nome: acordeonistMenuList[index].nome,
+                          experiencia: acordeonistMenuList[index].experiencia,
+                          cidade: acordeonistMenuList[index].cidade,
+                          favorito: acordeonistMenuList[index].favorito,
+                          icon: acordeonistMenuList[index].icon,
+                          regiao: acordeonistMenuList[index].regiao,
                         ),
                       ],
                     ),
                     Padding(
                       padding: EdgeInsets.all(
                           Resposivity.automatic(12, mediaQueryData)),
-                      child: const Align(
+                      child: Align(
                         alignment: Alignment.topRight,
-                        child: Icon(
-                          Icons.heart_broken,
+                        child: FaIcon(
+                          acordeonistMenuList[index].favorito.icon,
                           color: Colors.red,
                         ),
                       ),

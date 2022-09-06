@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_desafio01_interface/app/core/app_resposivity.dart';
-import 'package:flutter_desafio01_interface/app/core/data/filterDummyList.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomHorizontalMenuItem extends StatelessWidget {
