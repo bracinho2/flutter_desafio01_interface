@@ -37,7 +37,7 @@ class CustomBottomBarDetailPage extends StatelessWidget {
                   'Adotar',
                   style: TextStyle(
                     fontFamily: 'Inter',
-                    fontSize: Resposivity.automatic(20, mediaQueryData),
+                    fontSize: Resposivity.automatic(14, mediaQueryData),
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),

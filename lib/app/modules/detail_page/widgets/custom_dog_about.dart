@@ -24,12 +24,10 @@ class DogAbout extends StatelessWidget {
             ),
             Text(
               'when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronicd.It has survived not only five centuries.',
-              maxLines: 2,
               style: TextStyle(
-                fontSize: Resposivity.automaticFont(data: mediaQueryData),
+                fontSize: Resposivity.fontSize(16, mediaQueryData),
                 height: Resposivity.automatic(2, mediaQueryData),
                 color: Colors.grey,
-                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],

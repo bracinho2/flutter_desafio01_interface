@@ -12,28 +12,23 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          backgroundColor: Colors.white,
           appBar: const CustomDetailPageAppBarWidget(),
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+          body: ListView(
             children: [
-              Expanded(
-                flex: 1,
-                child: Container(
-                  color: Colors.white,
-                  child: const DogDetailDescription(),
-                ),
+              Container(
+                color: Colors.white,
+                child: const DogDetailDescription(),
               ),
-              Expanded(
-                flex: 3,
-                child: Container(
-                  color: Colors.white,
-                  child: const DogPhotos(),
-                ),
+              const SizedBox(
+                height: 6,
               ),
-              const Expanded(
-                flex: 2,
-                child: DogAbout(),
+              Container(
+                height: 368,
+                color: Colors.white,
+                child: const DogPhotos(),
               ),
+              const DogAbout(),
             ],
           ),
           bottomNavigationBar: const CustomBottomBarDetailPage()),

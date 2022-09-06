@@ -23,7 +23,7 @@ class CustomDetailPageAppBarWidget extends StatelessWidget
             onTap: () => Navigator.pop(context),
             child: Icon(
               Icons.keyboard_arrow_left,
-              size: Resposivity.automatic(20, mediaQueryData),
+              size: Resposivity.automatic(26, mediaQueryData),
               color: Colors.black54,
             ),
           ),
@@ -34,10 +34,11 @@ class CustomDetailPageAppBarWidget extends StatelessWidget
               shape: BoxShape.rectangle,
               color: AppColors.cinzaFraco,
               borderRadius: BorderRadius.circular(
-                  Resposivity.automatic(10, mediaQueryData)),
+                Resposivity.automatic(10, mediaQueryData),
+              ),
             ),
             child: Icon(
-              Icons.heart_broken,
+              Icons.favorite,
               color: Colors.red,
               size: Resposivity.automatic(20, mediaQueryData),
             ),

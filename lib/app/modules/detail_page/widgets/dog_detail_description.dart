@@ -10,71 +10,75 @@ class DogDetailDescription extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(
           horizontal: Resposivity.automatic(20, mediaQueryData)),
-      child: Row(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 'Sparky',
                 style: TextStyle(
-                  fontSize: Resposivity.automatic(30, mediaQueryData),
+                  fontFamily: 'serif',
+                  fontSize: Resposivity.fontSize(32, mediaQueryData),
                   fontWeight: FontWeight.w900,
                 ),
               ),
-              Text(
-                'Raça do Cusco',
-                style: TextStyle(
-                  fontSize: Resposivity.automatic(14, mediaQueryData),
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(
-                    Icons.place,
-                    size: Resposivity.automatic(20, mediaQueryData),
-                    color: Colors.red,
-                  ),
-                  SizedBox(
-                    width: Resposivity.automatic(10, mediaQueryData),
-                  ),
-                  Text(
-                    'Sulina - PR',
-                    style: TextStyle(
-                      fontSize: Resposivity.automatic(12, mediaQueryData),
-                      color: Colors.grey,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
+              Icon(
+                Icons.male,
+                color: Colors.black26,
+                size: Resposivity.automatic(26, mediaQueryData),
               ),
             ],
           ),
-          Padding(
-            padding: EdgeInsets.all(Resposivity.automatic(10, mediaQueryData)),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Icon(
-                  Icons.male,
-                  color: Colors.black26,
-                  size: Resposivity.automatic(30, mediaQueryData),
+          SizedBox(
+            height: Resposivity.automatic(12, mediaQueryData),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Raça do Cusco',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: Resposivity.fontSize(16, mediaQueryData),
+                  fontWeight: FontWeight.bold,
                 ),
-                Text(
-                  'Idade do Cachorro',
-                  style: TextStyle(
-                    fontSize: Resposivity.automatic(14, mediaQueryData),
-                    fontWeight: FontWeight.bold,
-                  ),
+              ),
+              Text(
+                'Idade do Cachorro',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: Resposivity.fontSize(16, mediaQueryData),
+                  fontWeight: FontWeight.bold,
                 ),
-              ],
-            ),
-          )
+              ),
+            ],
+          ),
+          SizedBox(
+            height: Resposivity.automatic(12, mediaQueryData),
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.place,
+                size: Resposivity.automatic(19, mediaQueryData),
+                color: Colors.red,
+              ),
+              SizedBox(
+                width: Resposivity.automatic(10, mediaQueryData),
+              ),
+              Text(
+                'Sulina - PR',
+                style: TextStyle(
+                  fontSize: Resposivity.automatic(14, mediaQueryData),
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );

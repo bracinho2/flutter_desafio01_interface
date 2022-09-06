@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 
+const String fonte = 'Roboto';
+
 class AppTextStyles {
   static TextStyle appBarTitle = const TextStyle(
-    fontSize: 12,
-    fontFamily: 'Inter',
+    fontFamily: fonte,
     color: Colors.grey,
     fontWeight: FontWeight.w500,
-  );
-  static TextStyle appBarSubtitle = const TextStyle(
-    fontSize: 14,
-    fontFamily: 'Inter',
-    color: Colors.black,
-    fontWeight: FontWeight.w900,
   );
 }

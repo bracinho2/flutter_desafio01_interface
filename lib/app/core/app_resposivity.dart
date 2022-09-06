@@ -28,17 +28,15 @@ class Resposivity {
         : _calcWidth(tamanho, data);
   }
 
-  static double automaticFont({double? size, required MediaQueryData data}) {
+  static double fontSize(double fontSize, MediaQueryData data) {
     final width = data.size.width;
 
-    var coeficiente = (data.size.width * 0.390625) / 100;
+    if (width > 320 && width < 767) return fontSize;
+    if (width > 768 && width < 1023) return fontSize + 2;
+    if (width > 1024 && width < 1279) return fontSize + 3;
+    if (width > 1280) return fontSize + 4;
 
-    if (width > 320 && width < 767) return 16;
-    if (width > 768 && width < 1023) return 18;
-    if (width > 1024 && width < 1279) return 19;
-    if (width > 1280) return 20;
-
-    return 16;
+    return 12;
   }
 }
 
