@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_desafio01_interface/app/core/app_resposivity.dart';
 import 'package:flutter_desafio01_interface/app/core/data/filterDummyList.dart';
 import 'package:flutter_desafio01_interface/app/modules/main_page/components/custom_horizontal_menu_item.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomSliverHorizontalBar extends StatelessWidget {
   const CustomSliverHorizontalBar({Key? key}) : super(key: key);

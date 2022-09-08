@@ -87,3 +87,38 @@ Slivers: https://www.youtube.com/watch?v=8C7cGNdJEkw&ab_channel=Flutterando
 ## Git
 
 Preferencialmente manter um histórico de commits no Git;
+
+## Componentização (Dicas...)
+- Um arquivo por WIDGET;
+
+## Responsividade
+Capacidade de responder rapida e adequadamente ao que lhe é perguntado, adaptando-se às circustâncias;
+
+- Fluid Grids: Grids com tamanho relativo, baseando-se na altura e largura da tela/janela;
+- Imagens fluidas: substitui tamanhos fixos por porcentagens; (max-width);
+- Media Query: Em vez de ter vários arquivos com projetos diferentes os elementos da tela são redimensionados em tempo de execução com a ajuda do Media Query;
+
+Flex Box (Uma direção por vez);
+Wrap (Quebra automática de linha);
+Expansion, Shrink(encolhimento) são Flex; 
+
+Exemplos de widgets Flex > Column, Row, Flexible, ConstrainedBox, Expanded;
+
+> Sempre atentar para o comportamento do widget pai;
+> um Align é um wrapper, ou seja, ele altera o comportamento de um item filho;
+
+> MediaQuery.size.width * 0.75 = 75% da tela;
+
+E o tamanho do widget em relação à tela?
+Procura-se o coeficiente:
+coeficienteTamanho = TamanhoWidget / TamanhoTela
+
+size.width * coeficiente;
+
+ConstrainedBox > Pode Limitar o tamanho máximo e/ou mínimo de um determinado widget; (exemplos telas de login)
+
+Spacer();
+
+## Nomes de arquivos
+> página: "home_page.dart".
+> widget: "app_bar_widget.dart" (snacke_case); //tem o PascalCase e tem o camelCase;

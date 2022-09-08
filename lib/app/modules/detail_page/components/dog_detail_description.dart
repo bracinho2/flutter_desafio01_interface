@@ -1,8 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_desafio01_interface/app/core/app_resposivity.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DogDetailDescription extends StatelessWidget {
-  const DogDetailDescription({Key? key}) : super(key: key);
+  final String name;
+  final String region;
+  final FaIcon icon;
+  final String city;
+  final String experience;
+  final FaIcon favorite;
+
+  const DogDetailDescription({
+    Key? key,
+    required this.name,
+    required this.region,
+    required this.icon,
+    required this.city,
+    required this.experience,
+    required this.favorite,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +33,15 @@ class DogDetailDescription extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Sparky',
+                name,
                 style: TextStyle(
                   fontFamily: 'serif',
                   fontSize: Resposivity.fontSize(32, mediaQueryData),
                   fontWeight: FontWeight.w900,
                 ),
               ),
-              Icon(
-                Icons.male,
+              FaIcon(
+                icon.icon,
                 color: Colors.black26,
                 size: Resposivity.automatic(26, mediaQueryData),
               ),
@@ -38,7 +54,7 @@ class DogDetailDescription extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Raça do Cusco',
+                region,
                 style: TextStyle(
                   color: Colors.black87,
                   fontSize: Resposivity.fontSize(16, mediaQueryData),
@@ -46,7 +62,7 @@ class DogDetailDescription extends StatelessWidget {
                 ),
               ),
               Text(
-                'Idade do Cachorro',
+                experience,
                 style: TextStyle(
                   color: Colors.black87,
                   fontSize: Resposivity.fontSize(16, mediaQueryData),
@@ -61,8 +77,8 @@ class DogDetailDescription extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(
-                Icons.place,
+              FaIcon(
+                favorite.icon,
                 size: Resposivity.automatic(19, mediaQueryData),
                 color: Colors.red,
               ),
@@ -70,7 +86,7 @@ class DogDetailDescription extends StatelessWidget {
                 width: Resposivity.automatic(10, mediaQueryData),
               ),
               Text(
-                'Sulina - PR',
+                city,
                 style: TextStyle(
                   fontSize: Resposivity.automatic(14, mediaQueryData),
                   color: Colors.grey,

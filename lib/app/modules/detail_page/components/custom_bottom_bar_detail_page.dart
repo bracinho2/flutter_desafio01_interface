@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_desafio01_interface/app/core/app_resposivity.dart';
 
 class CustomBottomBarDetailPage extends StatelessWidget {
-  const CustomBottomBarDetailPage({Key? key}) : super(key: key);
+  final String title;
+  const CustomBottomBarDetailPage({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +26,7 @@ class CustomBottomBarDetailPage extends StatelessWidget {
               ),
             ),
             height: 60,
-            width: Resposivity.automatic(200, mediaQueryData),
+            width: Resposivity.automatic(150, mediaQueryData),
             child: Center(
               child:
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -31,12 +36,12 @@ class CustomBottomBarDetailPage extends StatelessWidget {
                   size: Resposivity.automatic(30, mediaQueryData),
                 ),
                 SizedBox(
-                  width: Resposivity.automatic(20, mediaQueryData),
+                  width: Resposivity.automatic(15, mediaQueryData),
                 ),
                 Text(
-                  'Adotar',
+                  title,
                   style: TextStyle(
-                    fontFamily: 'Inter',
+                    fontFamily: 'ROBOTO',
                     fontSize: Resposivity.automatic(14, mediaQueryData),
                     fontWeight: FontWeight.bold,
                     color: Colors.white,

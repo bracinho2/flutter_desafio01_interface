@@ -7,6 +7,7 @@ class DogPhotos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mediaQueryData = MediaQuery.of(context);
+
     return Padding(
       padding: EdgeInsets.only(left: Resposivity.automatic(20, mediaQueryData)),
       child: Row(

@@ -16,8 +16,12 @@ class CustomSliverVerticalBar extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         (context, index) => InkWell(
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const DetailPage()));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => DetailPage(
+                          item: acordeonistMenuList[index],
+                        )));
           },
           child: Container(
             color: Colors.black12,
