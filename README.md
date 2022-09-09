@@ -28,7 +28,7 @@ Objetivos:
 Por definição é ˜Capacidade de responder rapida e adequadamente ao que lhe é perguntado, adaptando-se às circustâncias". Ou em outros termos "é a capacidade de o aplicativo não quebrar o layout em alguma tela diferente da tela originária. Como? A estratégia é trabalharmos com tamanhos proporcionais à tela original, ou seja, um widget possui um tamanho X em percentual relativo à uma tela Y.
 
 Exemplo: 
-> Um widget com largura de 100px em uma tela de largura de 377px é equivalente à 0.26px aproximados;
+- Um widget com largura de 100px em uma tela de largura de 377px é equivalente à 0.26px aproximados;
 Sabe a matemática? Vamos faze ruma continha simples:
 
 > coeficiente = tamanhoWidget / tamanho da tela;
