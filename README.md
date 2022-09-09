@@ -22,16 +22,22 @@ Objetivos:
     - Dica 02: utilize o padrão "PascalCase" para nomes de Classes;
     - Dica 03: utilize o padrão "camelCase" para nomes de variáveis;
 
-(snacke_case); //tem o PascalCase e tem o camelCase;
+> Importante: Mantenha preferencialmente um widget por arquivo. Isto facilita a manutenção e legibilidade do seu código;
 
 - Responsividade de Tela
 Por definição é ˜Capacidade de responder rapida e adequadamente ao que lhe é perguntado, adaptando-se às circustâncias". Ou em outros termos "é a capacidade de o aplicativo não quebrar o layout em alguma tela diferente da tela originária. Como? A estratégia é trabalharmos com tamanhos proporcionais à tela original, ou seja, um widget possui um tamanho X em percentual relativo à uma tela Y.
 
-> Exemplo: 
-Um widget com largura de 100px em uma tela de largura de 377px é equivalente à 0.26px aproximados;
+Exemplo: 
+> Um widget com largura de 100px em uma tela de largura de 377px é equivalente à 0.26px aproximados;
 Sabe a matemática? Vamos faze ruma continha simples:
 
-coeficiente = tamanhoWidget / tamanho da tela;
+> coeficiente = tamanhoWidget / tamanho da tela;
+
+Como Usamos?
+
+No tamanho da tela inserimos a seguinte informação:
+
+> MediaQuery.size.width * 0.26; //tamanho da tela multiplicado pelo coeficiente de tamanho do widget;
 
 - Dicas:
     - Fluid Grids: Grids com tamanho relativo, baseando-se na altura e largura da tela/janela; 
@@ -44,106 +50,32 @@ Expansion, Shrink(encolhimento) são Flex;
 
 Exemplos de widgets Flex > Column, Row, Flexible, ConstrainedBox, Expanded;
 
-> Sempre atentar para o comportamento do widget pai;
-> um Align é um wrapper, ou seja, ele altera o comportamento de um item filho;
+- Sempre atentar para o comportamento do widget pai;
+- Um Align é um wrapper, ou seja, ele altera o comportamento de um item filho;
+- ConstrainedBox > Pode Limitar o tamanho máximo e/ou mínimo de um determinado widget; (exemplos telas de login)
 
-> MediaQuery.size.width * 0.75 = 75% da tela;
-
-E o tamanho do widget em relação à tela?
-Procura-se o coeficiente:
-coeficienteTamanho = TamanhoWidget / TamanhoTela
-
-size.width * coeficiente;
-
-ConstrainedBox > Pode Limitar o tamanho máximo e/ou mínimo de um determinado widget; (exemplos telas de login)
-
-Spacer();
+Spacer(); // é um expanded + container;
 
 - Manipulação de Listas;
+
 - Trabalhar com Scrolls Aninhados;
+Atente-se para o widget Sliver; Ele serve justamente para facilitar o trabalho da criação de telas com duas listas com comportamento de Scroll;
 
 PS: O conteúdo (imagens e textos) não precisa ser idêntico ao mockup. Importante é a presença de todos os componentes;
 
+- Últimas dicas:
+    - Mantenha sempre uma classe que possa salvar os caminhos das imagens com Strings estáticas. Isto facilita a manutenção e a substituição caso seja necessário no futuro. Evita buscas trabalhosas de substituição de código em todo seu Aplicativo;
+    - Isto pode ser feito também para as cores e informações de texto num primeiro momento. Porém, recomendo gradativamente estudar sobre o ThemeData do Flutter para facilitar a manutenção e iniciar o uso também dos Temas que nos ajudam muito;
+
 ## Material de apoio:
 
-componentização: https://www.youtube.com/watch?v=VXh2gmS0jWU&ab_channel=Flutterando
+Componentização: https://www.youtube.com/watch?v=VXh2gmS0jWU&ab_channel=Flutterando
 
-responsividade: https://www.youtube.com/watch?v=UnAuTnR_ZM8&ab_channel=Flutterando
+Responsividade: https://www.youtube.com/watch?v=UnAuTnR_ZM8&ab_channel=Flutterando
 
 Slivers: https://www.youtube.com/watch?v=8C7cGNdJEkw&ab_channel=Flutterando
 
 ## Git
-
-Preferencialmente manter um histórico de commits no Git;
-
-## Componentização (Dicas...)
-- Um arquivo por WIDGET;
-
-## Tela 01
-## Descritivos das Atividades
-### AppBar
-Na leitura do Mockup encontramos os seguintes itens:
-1. Uma linha que recebe todos os itens;
-
-2. Dentro da linha encontramos 3 itens:
-    - Icone;
-    - Coluna com 2 textos;
-    - Avatar;
-
-3. Para personalizarmos precisamos entender primeiro qual é o tipo de Widget que podemos utilizar. Para personalizarmos a App Bar necessitamos implemnetar o widget chamado "PreferredSizeWidget". Nele encontramos o tamanho que deverá ser implementado seguido da extensão de um widget sem comportamento, ou seja, um stateless widget. 
-
-4. Durante personalização necessitamos também de mais duas informações, a saber:
-    - A família da fonte que vamos utilizar na personalização;
-    - Uma imagem para o avatar; //lembrar de criar a pasta assets;
-
-### Slivers
-A sugestão é utilizarmos o Widget Slivers que proporciona o uso de sliders aninhados com funções e direções diferentes. 
-Na leitura do Mockup encontramos os seguintes itens:
-    - Sliver horizontal;
-    - Sliver vertical;
-
-2. Sliver vertical:
-
-Cada um dos itens da lista pode ser construídos com os seguintes Widgets:
-    - Container com todos os itens;
-    - Row com todos os itens;
-    - Para separar e garantir a posição da Imagem + Descrições estes itens são envolvidos em uma nova Row; Lembre-se que na linha da localização temos uma nova Row com um icone + cidade;
-    - Para exibir a imagem usaremos um widget chamado ClipRep;
-    - Para alinhar o Coração utilizaremos o Widget Align que possui várias posições disponíveis;
-
-## Tela 02
-### AppBar
-Na leitura do Mockup encontramos os seguintes itens:
-    - Container;
-    - Linha;
-    - Dois widgets:
-        - Icone com função de retorno;
-        - Icone com função de Preferido;
-
-### Descrição do Cachorro
-Na leitura encontramos os seguintes itens:
-    - Container;
-    - Linha com espaçamento entre itens;
-    - Coluna esquerda (Nome, raça, localização (é uma linha com ícone + cidade));
-    - Coluna direita com ícone e idade;
+Preferencialmente mantenha o histórico de commits no Git;
 
 
-### Fotos do Animal
-Na leitura encontramos os seguintes itens:
-    - Linha;
-    - Lista de fotos (list view);
-    - sobreposição entre figura e foto;
-
-### Descrição do Animal
-Na leitura encontramos os seguintes itens:
-    - Container;
-    - Texto 'sobre';
-    - Texto 'Descrição';
-
-
-
-
-
-## Nomes de arquivos
-> página: "home_page.dart".
-> widget: "app_bar_widget.dart" (snacke_case); //tem o PascalCase e tem o camelCase;
