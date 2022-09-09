@@ -18,9 +18,47 @@ A missão:
 Objetivos:
 
 - Componentização de Widgets;
-    - Dica 01
+    - Dica 01: utilize o padrão "snake_case" para nomes de arquivos;
+    - Dica 02: utilize o padrão "PascalCase" para nomes de Classes;
+    - Dica 03: utilize o padrão "camelCase" para nomes de variáveis;
+
+(snacke_case); //tem o PascalCase e tem o camelCase;
 
 - Responsividade de Tela
+Por definição é ˜Capacidade de responder rapida e adequadamente ao que lhe é perguntado, adaptando-se às circustâncias". Ou em outros termos "é a capacidade de o aplicativo não quebrar o layout em alguma tela diferente da tela originária. Como? A estratégia é trabalharmos com tamanhos proporcionais à tela original, ou seja, um widget possui um tamanho X em percentual relativo à uma tela Y.
+
+> Exemplo: 
+Um widget com largura de 100px em uma tela de largura de 377px é equivalente à 0.26px aproximados;
+Sabe a matemática? Vamos faze ruma continha simples:
+
+coeficiente = tamanhoWidget / tamanho da tela;
+
+- Dicas:
+    - Fluid Grids: Grids com tamanho relativo, baseando-se na altura e largura da tela/janela; 
+    - Imagens fluidas: substitui tamanhos fixos por porcentagens; (max-width);
+    - Media Query: Em vez de ter vários arquivos com projetos diferentes os elementos da tela são redimensionados em tempo de execução com a ajuda do Media Query;
+
+Flex Box (Uma direção por vez);
+Wrap (Quebra automática de linha);
+Expansion, Shrink(encolhimento) são Flex; 
+
+Exemplos de widgets Flex > Column, Row, Flexible, ConstrainedBox, Expanded;
+
+> Sempre atentar para o comportamento do widget pai;
+> um Align é um wrapper, ou seja, ele altera o comportamento de um item filho;
+
+> MediaQuery.size.width * 0.75 = 75% da tela;
+
+E o tamanho do widget em relação à tela?
+Procura-se o coeficiente:
+coeficienteTamanho = TamanhoWidget / TamanhoTela
+
+size.width * coeficiente;
+
+ConstrainedBox > Pode Limitar o tamanho máximo e/ou mínimo de um determinado widget; (exemplos telas de login)
+
+Spacer();
+
 - Manipulação de Listas;
 - Trabalhar com Scrolls Aninhados;
 
@@ -104,33 +142,7 @@ Na leitura encontramos os seguintes itens:
 
 
 
-## Responsividade
-Capacidade de responder rapida e adequadamente ao que lhe é perguntado, adaptando-se às circustâncias;
 
-- Fluid Grids: Grids com tamanho relativo, baseando-se na altura e largura da tela/janela;
-- Imagens fluidas: substitui tamanhos fixos por porcentagens; (max-width);
-- Media Query: Em vez de ter vários arquivos com projetos diferentes os elementos da tela são redimensionados em tempo de execução com a ajuda do Media Query;
-
-Flex Box (Uma direção por vez);
-Wrap (Quebra automática de linha);
-Expansion, Shrink(encolhimento) são Flex; 
-
-Exemplos de widgets Flex > Column, Row, Flexible, ConstrainedBox, Expanded;
-
-> Sempre atentar para o comportamento do widget pai;
-> um Align é um wrapper, ou seja, ele altera o comportamento de um item filho;
-
-> MediaQuery.size.width * 0.75 = 75% da tela;
-
-E o tamanho do widget em relação à tela?
-Procura-se o coeficiente:
-coeficienteTamanho = TamanhoWidget / TamanhoTela
-
-size.width * coeficiente;
-
-ConstrainedBox > Pode Limitar o tamanho máximo e/ou mínimo de um determinado widget; (exemplos telas de login)
-
-Spacer();
 
 ## Nomes de arquivos
 > página: "home_page.dart".
